@@ -7,14 +7,28 @@ const prisma = new PrismaClient();
 export const revalidate = 30;
 
 async function getPosts() {
-  const posts = await prisma.post.findMany();
+  const data = await prisma.post.findMany();
+
+  const posts = data.map((post) => {
+    return {
+      ...post,
+      date: post.date.toLocaleString('en-GB', {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+      }),
+    };
+  });
+
   return posts;
 }
 
-
 export default async function Home() {
   const posts = await getPosts();
-  
+
   return (
     <main className={styles.main}>
       <AddCard />
