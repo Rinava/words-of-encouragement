@@ -1,9 +1,9 @@
 import styles from './styles.module.css';
 
-const Card = ({message,author,date}) => {
+const Card = ({content,author,date}) => {
   return (
     <article className={styles.card}>
-        <p>{message}</p>
+        <p>{content}</p>
         <div className={styles.authorDate}>
         <p className={styles.author}>-{author}</p>
         <time className={styles.date}>{date}</time>
