@@ -6,6 +6,12 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
+}
+
+model Post {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  content String?
+  author  String  @default("Anonymous")
 }
