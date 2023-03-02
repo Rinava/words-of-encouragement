@@ -1,6 +1,7 @@
 'use client';
 import styles from './styles.module.css';
 import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 const AddCard = () => {
   const router = useRouter();
@@ -19,18 +20,54 @@ const AddCard = () => {
 
     router.refresh();
   };
+  const heart = {
+    hidden: { scale: 0 },
+    hover: { scale: 2, transition: { duration: 0.6 } },
+    tap: { scale: 1, transition: { duration: 0.6 } },
+  };
+
+  const button = {
+    hidden: { scale: 1 },
+    hover: { scale: 1.1 },
+    tap: { scale: 0.5, transition: { duration: 0.5 } },
+  };
 
   return (
     <section className={styles.addCard}>
-      <h3>Write a message to someone who needs it.</h3>
-      <form onSubmit={newPost}>
-        <label htmlFor='name'>From</label>
-        <input name='author' type='text' placeholder='Your name' />
-        <label htmlFor='name'>To</label>
+      <h3 className={styles.title}>Write a message to someone who needs it.</h3>
+      <form onSubmit={newPost} className={styles.form}>
+        <label className={styles.label} htmlFor='author'>
+          From
+        </label>
+        <input
+          className={styles.input}
+          name='author'
+          type='text'
+          placeholder='Anonymous'
+        />
+        <label className={styles.label} htmlFor='content'>
+          Message
+        </label>
         <textarea
+          className={styles.content}
           name='content'
+          required
           placeholder='I hope you achieve your dreams'></textarea>
-        <input type='submit' value='Submit' />
+        <motion.button
+          className={styles.submit}
+          type='submit'
+          variants={button}
+          initial='hidden'
+          whileHover='hover'
+          whileTap='tap'>
+          <motion.div className={styles.heart} variants={heart}>
+            ♡
+          </motion.div>
+          Send
+          <motion.div className={styles.heart} variants={heart}>
+            ♡
+          </motion.div>
+        </motion.button>
       </form>
     </section>
   );
