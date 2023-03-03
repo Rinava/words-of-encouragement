@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import {NextRequest, NextResponse} from 'next/server'
+import { NextRequest, NextResponse } from 'next/server';
 
 const prisma = new PrismaClient();
 
@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
   const { author, content } = await request.json();
   const post = await prisma.post.create({
     data: {
-      author,
+      ...(author ? { author } : {}),
       content,
     },
   });

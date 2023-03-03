@@ -1,14 +1,12 @@
 import styles from './page.module.css';
 import Masonry from '../components/Masonry';
-import AddCard from 'components/AddCard';
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export const revalidate = 30;
 
 async function getPosts() {
-  const data = await prisma.post.findMany();
-
+  const data = await prisma.post.findMany({ orderBy: { date: 'desc' } });
   const posts = data.map((post) => {
     return {
       ...post,
@@ -31,7 +29,7 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <AddCard />
+      {/* <AddCard /> */}
       <Masonry posts={posts} />
     </main>
   );

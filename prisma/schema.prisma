@@ -11,9 +11,8 @@ datasource db {
 }
 
 model Post {
-  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
   content String?
-  author  String  @default("Anonymous")
+  author  String   @default("Anonymous")
   date    DateTime @default(now())
 }
-
