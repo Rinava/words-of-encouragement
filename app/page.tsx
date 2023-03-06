@@ -6,7 +6,7 @@ import  IPost  from './../Interfaces/IPost';
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
-export const revalidate = 4;
+export const revalidate = 0;
 
 async function getPosts() {
   const data = await prisma.post.findMany({ orderBy: { date: 'desc' } });
