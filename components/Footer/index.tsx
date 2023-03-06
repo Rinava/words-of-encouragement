@@ -14,7 +14,10 @@ const Footer = () => {
       <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
         <p>
           Check my other projects on{' '}
-          <a href='https://www.laramateo.com/' className={styles.link}>
+          <a
+            href='https://www.laramateo.com/'
+            className={styles.link}
+            target='_blank'>
             www.laramateo.com
           </a>
         </p>
