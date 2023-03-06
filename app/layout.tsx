@@ -21,9 +21,9 @@ export const metadata = {
     siteName: 'Words of Encouragement',
     images: [
       {
-        url: '/favicon.png',
-        width: 512,
-        height: 512,
+        url: '/og.png',
+        width: 1200,
+        height: 630,
       },
     ],
     locale: 'en-US',
