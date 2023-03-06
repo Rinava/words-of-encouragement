@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-import { Post } from '@prisma/client';
+import Post from '../../Interfaces/IPost';
 
 const Card = ({ content, author, date }: Post) => {
   return (

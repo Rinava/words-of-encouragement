@@ -2,6 +2,7 @@ import styles from './page.module.css';
 import Masonry from '../components/Masonry';
 import AddCard from '../components/AddCard';
 import Footer from '../components/Footer';
+import  IPost  from './../Interfaces/IPost';
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
@@ -23,11 +24,11 @@ async function getPosts() {
     };
   });
 
-  return posts;
+  return posts as IPost[];
 }
 
 export default async function Home() {
-  const posts = await getPosts();
+  const posts = await getPosts() ;
 
   return (
     <main className={styles.main}>
