@@ -17,7 +17,7 @@ const AddCard = () => {
         author: e.target.author.value,
       }),
     });
-
+e.target.reset();
     router.refresh();
   };
   const heart = {
