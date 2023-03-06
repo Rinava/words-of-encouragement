@@ -1,5 +1,7 @@
 import styles from './page.module.css';
 import Masonry from '../components/Masonry';
+import AddCard from '../components/AddCard';
+import Footer from '../components/Footer';
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
@@ -29,8 +31,9 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      {/* <AddCard /> */}
+      <AddCard />
       <Masonry posts={posts} />
+      <Footer />
     </main>
   );
 }

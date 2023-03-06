@@ -4,17 +4,29 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 40rem;
+  max-width: 1300px;
   height: 100%;
   margin-bottom: 2rem;
-  background-color: #fff;
+  margin-top: 1rem;
+  background-color: #ffd7eaab;
   border-radius: 5px;
-  padding: 1rem;
+  padding: 2rem 3rem 3rem 3rem;
+  box-shadow: 0 20px 10px rgba(36, 3, 128, 0.24);
 }
 .title {
-  font-size: 2rem;
+  text-align: center;
+  font-size: 3rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.italic {
+  font-family: 'Dancing Script', cursive;
+  font-size: 5rem;
+  line-height: 0.5;
+  font-weight: 600;
+  color: var(--secondary-2);
+  padding: 0 0.5rem;
 }
 .form {
   display: flex;
@@ -22,6 +34,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 800px;
   height: 100%;
 }
 .label {
@@ -32,7 +45,7 @@
 .input {
   width: 100%;
   height: 2rem;
-  border: 1px solid #ccc;
+  border: 2px solid #f3b7d3ab;
   border-radius: 5px;
   padding: 0.5rem;
   margin-bottom: 1rem;
@@ -40,21 +53,34 @@
 .content {
   width: 100%;
   height: 10rem;
-  border: 1px solid #ccc;
+  border: 2px solid #f3b7d3ab;
   border-radius: 5px;
   padding: 0.5rem;
   margin-bottom: 1rem;
 }
-
+.input,
+.content,
+.input::placeholder,
+.content::placeholder {
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  color: var(--font-color-1);
+}
+.input::placeholder,
+.content::placeholder {
+  color: var(--font-color-2);
+}
 .submit {
   width: 100%;
   height: 3rem;
-  border: 1px solid #ccc;
-  color: #fff;
+  border: 1px solid #cccccc00;
+  color: #ff92a4;
   border-radius: 5px;
-  padding: 0.5rem;
+  padding: 2rem;
   margin-bottom: 1rem;
-  background-color: #000000;
+  margin-top: 1rem;
+  background-color: var(--font-color-1);
   font-size: 1.5rem;
   font-weight: 600;
   cursor: pointer;
@@ -64,8 +90,9 @@
 }
 .heart {
   padding: 1rem;
+  line-height: 0;
 }
 .submit:hover {
-  background-color: var(--secondary-1);
-  color: #000000;
+  background-color:#ff96a783;
+  color: var(--font-color-1);
 }

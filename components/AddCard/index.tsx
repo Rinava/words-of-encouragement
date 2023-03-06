@@ -22,19 +22,23 @@ const AddCard = () => {
   };
   const heart = {
     hidden: { scale: 0 },
-    hover: { scale: 2, transition: { duration: 0.6 } },
+    hover: { scale: 1.4, transition: { duration: 0.3  } },
     tap: { scale: 1, transition: { duration: 0.6 } },
   };
 
   const button = {
-    hidden: { scale: 1 },
-    hover: { scale: 1.1 },
+    hidden: { scale: 1 , opacity: 0.8},
+    hover: { scale: 1.1, opacity: 1},
     tap: { scale: 0.5, transition: { duration: 0.5 } },
   };
 
   return (
     <section className={styles.addCard}>
-      <h3 className={styles.title}>Write a message to someone who needs it.</h3>
+      <h3 className={styles.title}>
+        Write a message <br />
+        to <span className={styles.italic}>someone</span> who{' '}
+        <span className={styles.italic}>needs</span> it.
+      </h3>
       <form onSubmit={newPost} className={styles.form}>
         <label className={styles.label} htmlFor='author'>
           From
@@ -61,11 +65,11 @@ const AddCard = () => {
           whileHover='hover'
           whileTap='tap'>
           <motion.div className={styles.heart} variants={heart}>
-            ♡
+          ❤︎
           </motion.div>
           Send
           <motion.div className={styles.heart} variants={heart}>
-            ♡
+          ❤︎
           </motion.div>
         </motion.button>
       </form>

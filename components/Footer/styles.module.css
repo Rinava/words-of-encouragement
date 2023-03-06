@@ -1,0 +1,16 @@
+.footer {
+  background-color: #520428;
+  color: #fdcbcb;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  margin: 1.5rem 0 -1.25rem ;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.link:hover {
+  color: #f76e6e;
+}

@@ -6,7 +6,7 @@ const Card = ({ content, author, date }: Post) => {
     <article className={styles.card}>
       <p className={styles.content}>{content}</p>
       <div className={styles.authorDate}>
-        <p className={styles.author}>-{author}</p>
+        <p className={styles.author}>- {author}</p>
         <time className={styles.date}>{date}</time>
       </div>
     </article>
